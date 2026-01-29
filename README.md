@@ -49,3 +49,71 @@ ShopMate-POS/
 ├── frontend/      # React Client (Inventory & Billing Modules)
 ├── backend/       # Node.js API (Sales & Product Logic)
 └── README.md      # Documentation
+```
+
+---
+
+## ⚙️ How to Setup and Use this Repo
+
+Follow these steps to get the project running on your local machine:
+
+---
+
+## 1. Clone the Repository
+
+Open your terminal and run:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ShopMate-POS.git
+cd ShopMate-POS
+```
+
+---
+
+## 2. Setup the Backend
+
+Navigate to the backend folder and install dependencies:
+
+```bash
+cd backend
+npm install
+```
+### Environment Variables
+
+Create a `.env` file in the backend folder and add your credentials:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+PORT=5000
+```
+Run the backend:
+
+```bash
+npm start
+```
+
+---
+
+## 3. Setup the Frontend
+
+Open a new terminal, navigate to the frontend folder, and install dependencies:
+
+```bash
+cd frontend
+npm install
+```
+Run the frontend:
+
+```bash
+npm start
+```
+
+---
+
+## 4. Database Setup
+
+> **Note:**  
+> Since signup is disabled for security reasons, you must manually add an **admin user** to your MongoDB `users` collection to log in for the first time.
+
+
