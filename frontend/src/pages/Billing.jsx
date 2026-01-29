@@ -10,10 +10,10 @@ export default function Billing() {
   // Data fetch karne ka function
   const fetchData = async () => {
     try {
-      const prodRes = await axios.get('https://shopmate-backend.vercel.app/api/products/all');
+      const prodRes = await axios.get('https://shopmate-pos.vercel.app/api/products/all');
       setProducts(prodRes.data);
 
-      const salesRes = await axios.get('https://shopmate-backend.vercel.app/api/sales/today_detailed');
+      const salesRes = await axios.get('https://shopmate-pos.vercel.app/api/sales/today_detailed');
       setTodaySales(salesRes.data.sales || []);
     } catch (err) {
       console.error("Fetch error:", err);
@@ -67,13 +67,13 @@ export default function Billing() {
     if (cart.length === 0) return alert("Please select some items first!");
     
     try {
-      await axios.post('https://shopmate-backend.vercel.app/api/sales/add', {
+      await axios.post('https://shopmate-pos.vercel.app/api/sales/add', {
         items: cart.map(i => ({ productId: i._id, name: i.name, qty: i.qty, price: i.price })),
         totalAmount: subTotal
       });
 
       for (const item of cart) {
-        await axios.put(`https://shopmate-backend.vercel.app/api/products/${item._id}`, { 
+        await axios.put(`https://shopmate-pos.vercel.app/api/products/${item._id}`, { 
           stock: item.stock - item.qty 
         });
       }

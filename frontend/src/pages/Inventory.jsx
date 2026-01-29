@@ -13,10 +13,10 @@ export default function Inventory() {
 
 const fetchData = async () => {
   try {
-    const prodRes = await axios.get('https://shopmate-backend.vercel.app/api/products/all');
+    const prodRes = await axios.get('https://shopmate-pos.vercel.app/api/products/all');
     setProducts(prodRes.data);
     
-    const revRes = await axios.get('https://shopmate-backend.vercel.app/api/sales/today_detailed');
+    const revRes = await axios.get('https://shopmate-pos.vercel.app/api/sales/today_detailed');
     
     if (revRes.data && revRes.data.totalRevenue !== undefined) {
       setRevenue(revRes.data.totalRevenue);
@@ -39,11 +39,11 @@ const fetchData = async () => {
 
     try {
       if (editId) {
-        await axios.put(`https://shopmate-backend.vercel.app/api/products/${editId}`, { name, price, category, stock });
+        await axios.put(`https://shopmate-pos.vercel.app/api/products/${editId}`, { name, price, category, stock });
         setEditId(null);
         alert("Product updated Successfully!");
       } else {
-        await axios.post('https://shopmate-backend.vercel.app/api/products/add', { name, price, category, stock });
+        await axios.post('https://shopmate-pos.vercel.app/api/products/add', { name, price, category, stock });
         alert("Product added Successfully!");
       }
       setName(''); setPrice(''); setStock(0); setCategory('General');
@@ -70,7 +70,7 @@ const fetchData = async () => {
   const deleteProduct = async (id) => {
     if (window.confirm("Are you sure you want to remove this product?")) {
       try {
-        await axios.delete(`https://shopmate-backend.vercel.app/api/products/${id}`);
+        await axios.delete(`https://shopmate-pos.vercel.app/api/products/${id}`);
         fetchData();
       } catch (err) {
         alert("Fail to Delete this product");

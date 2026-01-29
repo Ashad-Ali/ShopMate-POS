@@ -10,7 +10,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://shopmate-backend.vercel.app/api/auth/login', { username, password });
+      const res = await axios.post('https://shopmate-pos.vercel.app/api/auth/login', { username, password });
       localStorage.setItem('token', res.data.token); // Token save karein
       alert("Login Successfull!");
       navigate('/billing'); // Login ke baad kahan jana hai
