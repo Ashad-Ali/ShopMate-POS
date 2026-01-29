@@ -90,6 +90,8 @@ PORT=5000
 Run the backend:
 
 ```bash
+npm run dev
+# or
 npm start
 ```
 
@@ -106,6 +108,8 @@ npm install
 Run the frontend:
 
 ```bash
+npm run dev
+# or
 npm start
 ```
 
