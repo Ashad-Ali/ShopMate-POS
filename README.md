@@ -118,6 +118,6 @@ npm start
 ## 4. Database Setup
 
 > **Note:**  
-> Since signup is disabled for security reasons, you must manually add an **admin user** to your MongoDB `users` collection to log in for the first time and also replace this url "https://shopmate-pos.vercel.app/..." with the local "http://localhost:5000/...".
+> Since signup is disabled for security reasons, you must manually add an **admin user** to your MongoDB `users` collection to log in for the first time and also replace this url "https://shopmate-pos.vercel.app/..." with the local "http://localhost:5000/... to run it on your local machine".
 
 
