@@ -64,7 +64,7 @@ Follow these steps to get the project running on your local machine:
 Open your terminal and run:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ShopMate-POS.git
+git clone https://github.com/Ashad-Ali/ShopMate-POS.git
 cd ShopMate-POS
 ```
 
